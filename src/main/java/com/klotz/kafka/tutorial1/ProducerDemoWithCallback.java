@@ -21,7 +21,7 @@ public class ProducerDemoWithCallback {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         for (int i = 0; i < 10 ; i++) {
-            ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic",
+            ProducerRecord<String, String> record = new ProducerRecord<String, String>("second_topic",
                     "hello World" + Integer.toString(i));
             producer.send(record, new Callback() {
                 public void onCompletion(RecordMetadata recordMetadata, Exception e) {
